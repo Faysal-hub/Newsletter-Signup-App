@@ -2,7 +2,7 @@ const express = require('express');
 const https = require('https');
 const bodyParser = require('body-parser');
 const request = require('request');
-const port = 3000;
+const portNum = 3000;
 
 const app = express();
 
@@ -63,4 +63,4 @@ app.post("/failure", function(req, res){
 })
 
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen(process.env.port || portNum, () => console.log(`Example app listening at http://localhost:${portNum}`))
